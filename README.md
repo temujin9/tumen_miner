@@ -23,7 +23,7 @@ An experimental [BitCoin](http://bitcoin.org/) miner, which uses WebCL for poole
 Tumen Miner started life as [Krad Miner](https://en.bitcoin.it/wiki/Krad_Miner), developed by [oneman](https://github.com/oneman). Its development went into hiatus on June 2011, due in part to DDoS attacks made against the core infrastructure. In December of 2011 the code was purchased by T9 Productions and released as open source.
 
 ### Credits ###
-The [dark-hive theme](http://www.magpress.com/wordpress-themes/darkhive.html) is licensed from [MagPress](http://www.magpress.com/) under [CC-BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/us/). The [mining proxy](https://github.com/cdhowie/Bitcoin-mining-proxy/) is licensed from [Chris Howie](http://www.chrishowie.com/) under the (Affero GPL)[http://www.gnu.org/licenses/agpl.html].
+The [dark-hive theme](http://www.magpress.com/wordpress-themes/darkhive.html) is licensed from [MagPress](http://www.magpress.com/) under [CC-BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/us/). The [mining proxy](https://github.com/cdhowie/Bitcoin-mining-proxy/) is licensed from [Chris Howie](http://www.chrishowie.com/) under the [Affero GPL](http://www.gnu.org/licenses/agpl.html).
 
 ### Original Author Notes, 2011/12/24 ###
 > Here is the dump, I may have other versions, but this was the first thing I found, it maybe the best I have. I think the important javascript parts were miner_original.js and worker_original.js (which is missing) but you maybe able to de-minfy the worker.js file.
