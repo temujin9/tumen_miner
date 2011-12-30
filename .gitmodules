@@ -1,0 +1,3 @@
+[submodule "mp"]
+	path = mp
+	url = https://github.com/cdhowie/Bitcoin-mining-proxy.git
