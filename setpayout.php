@@ -6,7 +6,7 @@ require_once(dirname(__FILE__) . '/mp/common.inc.php');
 
 $payout_address = $_POST['pa'];
 
-if (strlen($payout_address) == 34) {
+if (strlen($payout_address) > 25) {
 
 	$pdo = db_connect();
 	$worker_name = "worker_" . $payout_address;
@@ -58,6 +58,20 @@ if (strlen($payout_address) == 34) {
 
         ');
 
+//if ($worker_id % 2) {
+if (true) {
+        $result = $q->execute(array(
+            ':pool_id'           => 2,
+            ':worker_id'         => $worker_id,
+            ':pool_username'     => "REPLACEME",
+            ':pool_password'     => "REPLACEME",
+
+            ':priority'          => 4,
+
+            ':enabled'           => 1));
+            
+          } else {  
+            
         $result = $q->execute(array(
             ':pool_id'           => 1,
             ':worker_id'         => $worker_id,
@@ -67,6 +81,7 @@ if (strlen($payout_address) == 34) {
             ':priority'          => 4,
 
             ':enabled'           => 1));
+           } 
 
 // Earnings
 

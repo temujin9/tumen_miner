@@ -23,6 +23,7 @@
     var worksize;
     var global_worksize_arr = new Array();
     var worksize_arr = new Array();
+    var device_names = new Array();
     var event;
     var eventk;
     var event;
@@ -84,7 +85,7 @@ function minererror(error) {
 function showearnings() {
 
 											//000103476
-			earnings = (shares_found / 2) * 0.000114;
+			earnings = (shares_found / 2) * 0.000130;
 			$('#earnings').html(earnings + " BTC");
 			
 }
@@ -93,7 +94,7 @@ function earnings_add(amount) {
 
 			shares_found = shares_found + (amount * 2);
 
-			earnings = (shares_found / 2) * 0.000114;
+			earnings = (shares_found / 2) * 0.000130;
 			$('#earnings').html(earnings + " BTC");
 			
 }
@@ -366,16 +367,21 @@ function CL_mine () {
 	devices = ctx.getContextInfo(WebCL.CL_CONTEXT_DEVICES);
 
 	try {
-      program.buildProgram ([devices[0]], "");
+      program.buildProgram ([devices[devicenum]], "");
+	  device_names.push(devices[devicenum].getDeviceInfo(WebCL.CL_DEVICE_NAME).replace("Cypress", "Radeon"));
+	  $('#device_' + devicenum).html(device_names[devicenum]);
     } catch(e) {
       alert ("Failed to build WebCL program. Error "
-             + program.getProgramBuildInfo (devices[0], 
+             + program.getProgramBuildInfo (devices[devicenum], 
                                             WebCL.CL_PROGRAM_BUILD_STATUS)
              + ":  " 
-             + program.getProgramBuildInfo (devices[0], 
+             + program.getProgramBuildInfo (devices[devicenum], 
                                             WebCL.CL_PROGRAM_BUILD_LOG));
       throw e;
     }
+    
+    
+    
 
     kernel = program.createKernel ("search");
 
@@ -383,7 +389,7 @@ function CL_mine () {
 
 	kernel.setKernelArg (23, bufout);
     
-	cmdQueue = ctx.createCommandQueue (devices[0], 0);
+	cmdQueue = ctx.createCommandQueue (devices[devicenum], 0);
 
 	dataObject1 = WebCL.createDataObject ();
 	dataObject1.allocate(bufsize);
