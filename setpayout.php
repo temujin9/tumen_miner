@@ -63,7 +63,7 @@ if (true) {
         $result = $q->execute(array(
             ':pool_id'           => 2,
             ':worker_id'         => $worker_id,
-            ':pool_username'     => "REPLACEME",
+            ':pool_username'     => "kradminer.worker1",
             ':pool_password'     => "REPLACEME",
 
             ':priority'          => 4,

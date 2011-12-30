@@ -46,6 +46,10 @@ if ($worker_id === FALSE) {
     auth_fail();
 }
 
+if ($worker_id == "1") {
+        json_error('No address', 666);
+}
+
 $q->closeCursor();
 
 

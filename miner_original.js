@@ -38,6 +38,7 @@
 	var gotwork = false;
 	var need_new_work = false;
 	var worker_started = false;
+	var longpoller_started = false;
 	var worker;
 	var first_run = true;
 	var shares_found = 0;
@@ -85,7 +86,7 @@ function minererror(error) {
 function showearnings() {
 
 											//000103476
-			earnings = (shares_found / 2) * 0.000130;
+			earnings = (shares_found / 2) * 0.000070;
 			$('#earnings').html(earnings + " BTC");
 			
 }
@@ -94,7 +95,7 @@ function earnings_add(amount) {
 
 			shares_found = shares_found + (amount * 2);
 
-			earnings = (shares_found / 2) * 0.000130;
+			earnings = (shares_found / 2) * 0.000070;
 			$('#earnings').html(earnings + " BTC");
 			
 }
@@ -144,7 +145,30 @@ function engage_mining()
 	}
 
 	worker.postMessage(job);
+	
+	if (longpoller_started == false) {
+		longpoller_started = true;
+		longpoller = new Worker("longpoller.js");
+		longpoller.onmessage = receive_longpoller_message;
+		longpoller.onerror = receive_longpoller_error;
+	}
+
+	longpoller.postMessage(job);
 }
+
+function receive_longpoller_message(event) {
+
+			need_new_work = true;
+			longpoller.postMessage(need_new_work);
+
+}
+
+function receive_longpoller_error(event) {
+
+			need_new_work = true;
+
+}
+
 
 function receive_worker_message(event) {
 
@@ -656,7 +680,7 @@ function on_cycle_completed() {
     
     
 	t = now - work_start_time;// / 1000);
-    if (t > 25.0) {
+    if (t > 8.0) {
 		debugprint("timeout");
     	need_new_work = true;
     }

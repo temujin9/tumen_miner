@@ -35,7 +35,7 @@ for($x = 0; $x < $y; $x++) {
 
             FROM submitted_work
 
-            WHERE worker_id = :worker_id AND paid = 0
+            WHERE worker_id = :worker_id and paid = 0 result = 1
         ');
 
         $q2->execute(array(':worker_id' => $worker_id));
@@ -44,15 +44,15 @@ for($x = 0; $x < $y; $x++) {
 		$earnings_count = ($q2->rowCount() / 2);
 
 ?>
-<?php if ($earnings_count > 271) { 
+<?php if ($earnings_count > 421) { 
 
 		$earnings_count_total = $earnings_count_total + $earnings_count;
 		
-		$earnings_amount = $earnings_count * 0.000114;
+		$earnings_amount = $earnings_count * 0.000070;
 		$earnings_amount_total = $earnings_amount_total + $earnings_amount;
+/*
 
-
-   /* $q3 = $pdo->prepare('
+    $q3 = $pdo->prepare('
             UPDATE submitted_work
 
             SET paid = 1
@@ -68,13 +68,13 @@ for($x = 0; $x < $y; $x++) {
 ?>
 <?php if (false) { ?>
 Earnings for <?php echo $worker_addr; ?> are <?php echo $earnings_count; ?> -  <?php echo $earnings_amount; ?> BTC<br/>
-<?php } ?>
+<?php } else { ?>
 
 
 "<?php echo $worker_addr; ?>":<?php echo $earnings_amount; ?>, 
 
 <?php
-}
+} }
 
 }
 
