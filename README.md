@@ -5,7 +5,7 @@ An experimental [BitCoin](http://bitcoin.org/) miner, which uses WebCL for poole
 [WebCL](http://www.khronos.org/webcl/) is an emerging web standard for accessing a computer's GPU (Graphics Processor Unit) for general purpose computation. At this time there are two open-source implementations: [a Firefox 4 plugin from Nokia](http://webcl.nokiaresearch.com/), and [a Webkit prototype from Samsung](http://code.google.com/p/webcl/).
 
 ## Copyright & License ##
-Copyright &copy; 2011 T9 Productions
+&copy; 2011 T9 Productions
 
 Licensed under the Apache License, Version 2.0 (the "License");
 
