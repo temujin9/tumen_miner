@@ -5,9 +5,9 @@ An experimental [BitCoin](http://bitcoin.org/) miner, which uses WebCL for poole
 [WebCL](http://www.khronos.org/webcl/) is an emerging web standard for accessing a computer's GPU (Graphics Processor Unit) for general purpose computation. At this time there are two open-source implementations: [a Firefox 4 plugin from Nokia](http://webcl.nokiaresearch.com/), and [a Webkit prototype from Samsung](http://code.google.com/p/webcl/).
 
 ## Copyright & License ##
-&copy; 2011 T9 Productions
+&copy; 2011 [T9 Productions](http://t9productions.com)
 
-Licensed under the Apache License, Version 2.0 (the "License");
+Licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0) (the "License");
 
 *   You may not use this file except in compliance with the License.
 *   You may obtain a copy of the License at
@@ -21,7 +21,7 @@ limitations under the License.
 ## History ##
 Tumen Miner started life as [Krad Miner](https://en.bitcoin.it/wiki/Krad_Miner), developed by [oneman](https://github.com/oneman). Its development went into hiatus on June 2011; due, in part, to DDoS attacks made against the core infrastructure. 
 
-In December of 2011 the code was purchased by T9 Productions and released as open source.
+In December of 2011 the code was purchased by [T9 Productions](http://t9productions.com) and released as open source.
 
 ### Credits ###
 The [dark-hive theme](http://www.magpress.com/wordpress-themes/darkhive.html) is licensed from [MagPress](http://www.magpress.com/) under [CC-BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/us/). 
